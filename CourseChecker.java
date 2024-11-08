@@ -131,8 +131,6 @@ public class CourseChecker {
                     String content = new String(Files.readAllBytes(Paths.get("search", sanitizedCode + ".xml")));
                     if (content.contains(title)) {
                         resultBuilder.append("Found ").append(course).append("\n");
-                    } else {
-                        resultBuilder.append("Not found: ").append(course).append("\n");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
