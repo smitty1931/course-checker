@@ -7,9 +7,16 @@ import javax.swing.*;
 import java.awt.GraphicsEnvironment;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
 public class CourseChecker {
     private static JTextArea resultArea;
@@ -34,7 +41,7 @@ public class CourseChecker {
             // Create and set up the window
             JFrame frame = new JFrame("Course Checker");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 400);
+            frame.setSize(400, 800);
 
             // Create and set up the panel
             JPanel panel = new JPanel();
@@ -74,11 +81,16 @@ public class CourseChecker {
         submitButton.setBounds(10, 80, 80, 25);
         panel.add(submitButton);
 
+        // Create reset button
+        JButton resetButton = new JButton("Reset");
+        resetButton.setBounds(100, 80, 80, 25);
+        panel.add(resetButton);
+
         // Create JTextArea for results
         resultArea = new JTextArea();
         resultArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(resultArea);
-        scrollPane.setBounds(10, 110, 360, 240);
+        scrollPane.setBounds(10, 110, 360, 640);
         panel.add(scrollPane);
 
         // Add action listener to the submit button
@@ -88,6 +100,13 @@ public class CourseChecker {
             List<String> courses = Arrays.asList(coursesInput.split(","));
 
             processCourses(sem, courses, panel);
+        });
+
+        // Add action listener to the reset button
+        resetButton.addActionListener(e -> {
+            semesterText.setText("");
+            coursesText.setText("");
+            resultArea.setText("");
         });
     }
 
@@ -137,6 +156,22 @@ public class CourseChecker {
                     String content = new String(Files.readAllBytes(Paths.get("search", sanitizedCode + ".xml")));
                     if (content.contains(title)) {
                         resultBuilder.append("Found ").append(course).append("\n");
+                        String newCommand = "https://api.easi.utoronto.ca/ttb/getPageableCourses";
+                        String postData = String.format(
+                            "{\"courseCodeAndTitleProps\":{\"courseCode\":\"%s\",\"courseTitle\":\"%s\",\"courseSectionCode\":\"\",\"searchCourseDescription\":true},\"departmentProps\":[],\"campuses\":[],\"sessions\":[\"%s\"],\"requirementProps\":[],\"instructor\":\"\",\"courseLevels\":[],\"deliveryModes\":[],\"dayPreferences\":[],\"timePreferences\":[],\"divisions\":[\"ARTSC\"],\"creditWeights\":[],\"availableSpace\":false,\"waitListable\":false,\"page\":1,\"pageSize\":20,\"direction\":\"asc\"}",
+                            sanitizedCode, course, sem
+                        );
+                        try {
+                            String newResponse = fetchUrl(newCommand, "POST", postData);
+                            // Clean up the response
+                            newResponse = newResponse.trim().replaceFirst("^([\\W]+)<","<");
+                            Files.write(Paths.get("search", sanitizedCode + "_details.xml"), newResponse.getBytes());
+                            String sections = extractCourseContent("search/" + sanitizedCode + "_details.xml", "pageable.xml");
+                            resultBuilder.append(sections);
+                            resultBuilder.append("-------------------------------------\n");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         foundCourses.add(course);
                     }
                 } catch (IOException e) {
@@ -156,37 +191,19 @@ public class CourseChecker {
         } else {
             System.out.println(resultBuilder.toString());
         }
-
-        // Make new API calls for found courses
-        for (String foundCourse : foundCourses) {
-            String code = foundCourse.substring(0, 4);
-            String sanitizedCode = code.replaceAll("1$", "");
-            String newCommand = "https://api.easi.utoronto.ca/ttb/getPageableCourses";
-            String postData = String.format(
-                "{\"courseCodeAndTitleProps\":{\"courseCode\":\"%s\",\"courseTitle\":\"%s\",\"courseSectionCode\":\"\",\"searchCourseDescription\":true},\"departmentProps\":[],\"campuses\":[],\"sessions\":[\"%s\"],\"requirementProps\":[],\"instructor\":\"\",\"courseLevels\":[],\"deliveryModes\":[],\"dayPreferences\":[],\"timePreferences\":[],\"divisions\":[\"ARTSC\"],\"creditWeights\":[],\"availableSpace\":false,\"waitListable\":false,\"page\":1,\"pageSize\":20,\"direction\":\"asc\"}",
-                sanitizedCode, foundCourse, sem
-            );
-            try {
-                String newResponse = fetchUrl(newCommand, "POST", postData);
-                // Clean up the response
-                newResponse = newResponse.trim().replaceFirst("^([\\W]+)<","<");
-                Files.write(Paths.get("search", sanitizedCode + "_details.xml"), newResponse.getBytes());
-
-                // Parse the XML and output section names
-                List<String> sectionNames = extractSectionNames(Paths.get("search", sanitizedCode + "_details.xml").toString());
-                for (String sectionName : sectionNames) {
-                    resultBuilder.append("Section: ").append(sectionName).append("\n");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        
+        try {
+            deleteDirectory(searchDir);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
-        if (panel != null) {
-            resultArea.setText(resultBuilder.toString());
-        } else {
-            System.out.println(resultBuilder.toString());
-        }
+    private static void deleteDirectory(File directory) throws IOException {
+        Files.walk(directory.toPath())
+             .sorted(Comparator.reverseOrder())
+             .map(Path::toFile)
+             .forEach(File::delete);
     }
 
     private static String fetchUrl(String urlString, String method, String postData) throws IOException {
@@ -197,7 +214,7 @@ public class CourseChecker {
 
         if ("POST".equalsIgnoreCase(method) && postData != null) {
             conn.setRequestProperty("Content-Type", "application/json; utf-8");
-            conn.setRequestProperty("Accept", "application/json");
+            conn.setRequestProperty("Accept", "*/*");
             try (OutputStream os = conn.getOutputStream()) {
                 byte[] input = postData.getBytes("utf-8");
                 os.write(input, 0, input.length);
@@ -209,38 +226,84 @@ public class CourseChecker {
         }
     }
 
-    private static List<String> extractSectionNames(String xmlFilePath) {
-        List<String> sectionNames = new ArrayList<>();
+    private static String extractCourseContent(String inputFilePath, String outputFilePath) {
+        String sections = "";
         try {
-            File xmlFile = new File(xmlFilePath);
+            File inputFile = new File(inputFilePath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(xmlFile);
+            Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            
-            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
-            NodeList sectionsList = doc.getElementsByTagName("sections");
-            for (int i = 0; i < sectionsList.getLength(); i++) {
-                Element sectionsElement = (Element) sectionsList.item(i);
-                NodeList innerSectionsList = sectionsElement.getElementsByTagName("sections");
-                for (int j = 0; j < innerSectionsList.getLength(); j++) {
-                    Element innerSectionsElement = (Element) innerSectionsList.item(j);
-                    NodeList nameList = innerSectionsElement.getElementsByTagName("name");
-                    for (int k = 0; k < nameList.getLength(); k++) {
-                        sectionNames.add(nameList.item(k).getTextContent());
+    
+            NodeList nList = doc.getElementsByTagName("payload");
+            if (nList.getLength() > 0) {
+                Node payloadNode = nList.item(0);
+                if (payloadNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element payloadElement = (Element) payloadNode;
+    
+                    // Convert the payload element to a string with XML formatting
+                    TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                    Transformer transformer = transformerFactory.newTransformer();
+                    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                    DOMSource source = new DOMSource(payloadElement);
+                    StringWriter writer = new StringWriter();
+                    StreamResult result = new StreamResult(writer);
+                    transformer.transform(source, result);
+    
+                    // Write the content to the output file
+                    try (FileWriter fileWriter = new FileWriter(outputFilePath)) {
+                        fileWriter.write(writer.toString());
                     }
+
+                    sections=extractSectionsDetails(outputFilePath);
                 }
+            } else {
+                System.out.println("No <payload> element found.");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return sectionNames;
+        return sections;
     }
 
-    private static void deleteDirectory(File directory) throws IOException {
-        Files.walk(directory.toPath())
-             .sorted(Comparator.reverseOrder())
-             .map(Path::toFile)
-             .forEach(File::delete);
+    private static String extractSectionsDetails(String inputFilePath) {
+        StringBuilder details = new StringBuilder();
+        try {
+            File inputFile = new File(inputFilePath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+
+            NodeList sectionsList = doc.getElementsByTagName("sections");
+            if (sectionsList.getLength() > 0) {
+                Node sectionsNode = sectionsList.item(0);
+                if (sectionsNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element sectionsElement = (Element) sectionsNode;
+
+                    NodeList sectionNodes = sectionsElement.getElementsByTagName("sections");
+                    for (int i = 0; i < sectionNodes.getLength(); i++) {
+                        Node sectionNode = sectionNodes.item(i);
+                        if (sectionNode.getNodeType() == Node.ELEMENT_NODE) {
+                            Element sectionElement = (Element) sectionNode;
+
+                            String name = sectionElement.getElementsByTagName("name").item(0).getTextContent();
+                            String currentEnrolment = sectionElement.getElementsByTagName("currentEnrolment").item(0).getTextContent();
+                            String maxEnrolment = sectionElement.getElementsByTagName("maxEnrolment").item(0).getTextContent();
+
+                            details.append("Section Name: ").append(name).append("\n");
+                            details.append("Current Enrolment: ").append(currentEnrolment).append("\n");
+                            details.append("Max Enrolment: ").append(maxEnrolment).append("\n");
+                            details.append("\n");
+                        }
+                    }
+                }
+            } else {
+                details.append("No <sections> element found.\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return details.toString();
     }
 }
