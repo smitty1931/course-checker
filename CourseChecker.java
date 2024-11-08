@@ -5,6 +5,11 @@ import java.util.*;
 import java.util.stream.*;
 import javax.swing.*;
 import java.awt.GraphicsEnvironment;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Element;
 
 public class CourseChecker {
     private static JTextArea resultArea;
@@ -114,7 +119,7 @@ public class CourseChecker {
             String sanitizedCode = code.replaceAll("1$", "");
             String command = "https://api.easi.utoronto.ca/ttb/getOptimizedMatchingCourseTitles?term=" + sanitizedCode + "&divisions=ARTSC&sessions=" + sem + "&lowerThreshold=50&upperThreshold=200";
             try {
-                String response = fetchUrl(command);
+                String response = fetchUrl(command, "GET", null);
                 Files.write(Paths.get("search", sanitizedCode + ".xml"), response.getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -122,6 +127,7 @@ public class CourseChecker {
         }
 
         StringBuilder resultBuilder = new StringBuilder();
+        List<String> foundCourses = new ArrayList<>();
         for (String course : courses) {
             if (course.length() >= 4) {
                 String code = course.substring(0, 4);
@@ -131,12 +137,17 @@ public class CourseChecker {
                     String content = new String(Files.readAllBytes(Paths.get("search", sanitizedCode + ".xml")));
                     if (content.contains(title)) {
                         resultBuilder.append("Found ").append(course).append("\n");
+                        foundCourses.add(course);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
-                resultBuilder.append("Invalid course format: ").append(course).append("\n");
+                if (panel != null) {
+                    JOptionPane.showMessageDialog(panel, "Invalid course format: " + course, "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    System.out.println("Invalid course format: " + course);
+                }
             }
         }
 
@@ -146,20 +157,84 @@ public class CourseChecker {
             System.out.println(resultBuilder.toString());
         }
 
-        try {
-            deleteDirectory(searchDir);
-        } catch (IOException e) {
-            e.printStackTrace();
+        // Make new API calls for found courses
+        for (String foundCourse : foundCourses) {
+            String code = foundCourse.substring(0, 4);
+            String sanitizedCode = code.replaceAll("1$", "");
+            String newCommand = "https://api.easi.utoronto.ca/ttb/getPageableCourses";
+            String postData = String.format(
+                "{\"courseCodeAndTitleProps\":{\"courseCode\":\"%s\",\"courseTitle\":\"%s\",\"courseSectionCode\":\"\",\"searchCourseDescription\":true},\"departmentProps\":[],\"campuses\":[],\"sessions\":[\"%s\"],\"requirementProps\":[],\"instructor\":\"\",\"courseLevels\":[],\"deliveryModes\":[],\"dayPreferences\":[],\"timePreferences\":[],\"divisions\":[\"ARTSC\"],\"creditWeights\":[],\"availableSpace\":false,\"waitListable\":false,\"page\":1,\"pageSize\":20,\"direction\":\"asc\"}",
+                sanitizedCode, foundCourse, sem
+            );
+            try {
+                String newResponse = fetchUrl(newCommand, "POST", postData);
+                // Clean up the response
+                newResponse = newResponse.trim().replaceFirst("^([\\W]+)<","<");
+                Files.write(Paths.get("search", sanitizedCode + "_details.xml"), newResponse.getBytes());
+
+                // Parse the XML and output section names
+                List<String> sectionNames = extractSectionNames(Paths.get("search", sanitizedCode + "_details.xml").toString());
+                for (String sectionName : sectionNames) {
+                    resultBuilder.append("Section: ").append(sectionName).append("\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (panel != null) {
+            resultArea.setText(resultBuilder.toString());
+        } else {
+            System.out.println(resultBuilder.toString());
         }
     }
 
-    private static String fetchUrl(String urlString) throws IOException {
+    private static String fetchUrl(String urlString, String method, String postData) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+        conn.setRequestMethod(method);
+        conn.setDoOutput(true);
+
+        if ("POST".equalsIgnoreCase(method) && postData != null) {
+            conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setRequestProperty("Accept", "application/json");
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = postData.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+        }
+
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"))) {
             return in.lines().collect(Collectors.joining("\n"));
         }
+    }
+
+    private static List<String> extractSectionNames(String xmlFilePath) {
+        List<String> sectionNames = new ArrayList<>();
+        try {
+            File xmlFile = new File(xmlFilePath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+            
+            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+            NodeList sectionsList = doc.getElementsByTagName("sections");
+            for (int i = 0; i < sectionsList.getLength(); i++) {
+                Element sectionsElement = (Element) sectionsList.item(i);
+                NodeList innerSectionsList = sectionsElement.getElementsByTagName("sections");
+                for (int j = 0; j < innerSectionsList.getLength(); j++) {
+                    Element innerSectionsElement = (Element) innerSectionsList.item(j);
+                    NodeList nameList = innerSectionsElement.getElementsByTagName("name");
+                    for (int k = 0; k < nameList.getLength(); k++) {
+                        sectionNames.add(nameList.item(k).getTextContent());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return sectionNames;
     }
 
     private static void deleteDirectory(File directory) throws IOException {
