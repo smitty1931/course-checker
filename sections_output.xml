@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="UTF-8"?><sections>
+                        
+    <sections>
+                                
+        <name>TUT0103</name>
+                                
+        <type>Tutorial</type>
+                                
+        <teachMethod>TUT</teachMethod>
+                                
+        <sectionNumber>0103</sectionNumber>
+                                
+        <meetingTimes>
+                                        
+            <meetingTimes>
+                                                
+                <start>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>54000000</millisofday>
+                                                    
+                </start>
+                                                
+                <end>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>57600000</millisofday>
+                                                    
+                </end>
+                                                
+                <building>
+                                                        
+                    <buildingCode>SS</buildingCode>
+                                                        
+                    <buildingRoomNumber/>
+                                                        
+                    <buildingRoomSuffix/>
+                                                        
+                    <buildingUrl>https://map.utoronto.ca/?id=1809#!m/494510</buildingUrl>
+                                                        
+                    <buildingName/>
+                                                    
+                </building>
+                                                
+                <sessionCode>20249</sessionCode>
+                                                
+                <repetition>WEEKLY</repetition>
+                                                
+                <repetitionTime>ONCE_A_WEEK</repetitionTime>
+                                            
+            </meetingTimes>
+                                    
+        </meetingTimes>
+                                
+        <firstMeeting/>
+                                
+        <instructors/>
+                                
+        <currentEnrolment>30</currentEnrolment>
+                                
+        <maxEnrolment>31</maxEnrolment>
+                                
+        <subTitle/>
+                                
+        <cancelInd>N</cancelInd>
+                                
+        <waitlistInd>N</waitlistInd>
+                                
+        <deliveryModes>
+                                        
+            <deliveryModes>
+                                                
+                <session>20249</session>
+                                                
+                <mode>INPER</mode>
+                                            
+            </deliveryModes>
+                                    
+        </deliveryModes>
+                                
+        <currentWaitlist>0</currentWaitlist>
+                                
+        <enrolmentInd/>
+                                
+        <tbaInd>N</tbaInd>
+                                
+        <openLimitInd>N</openLimitInd>
+                                
+        <notes>
+                                        
+            <notes>
+                                                
+                <name>Section Note</name>
+                                                
+                <type>SECTION</type>
+                                                
+                <content/>
+                                            
+            </notes>
+                                    
+        </notes>
+                                
+        <enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>31</quantity>
+                                                
+                <sequence>1</sequence>
+                                            
+            </enrolmentControls>
+                                    
+        </enrolmentControls>
+                            
+    </sections>
+                        
+    <sections>
+                                
+        <name>TUT0101</name>
+                                
+        <type>Tutorial</type>
+                                
+        <teachMethod>TUT</teachMethod>
+                                
+        <sectionNumber>0101</sectionNumber>
+                                
+        <meetingTimes>
+                                        
+            <meetingTimes>
+                                                
+                <start>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>54000000</millisofday>
+                                                    
+                </start>
+                                                
+                <end>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>57600000</millisofday>
+                                                    
+                </end>
+                                                
+                <building>
+                                                        
+                    <buildingCode>SS</buildingCode>
+                                                        
+                    <buildingRoomNumber/>
+                                                        
+                    <buildingRoomSuffix/>
+                                                        
+                    <buildingUrl>https://map.utoronto.ca/?id=1809#!m/494510</buildingUrl>
+                                                        
+                    <buildingName/>
+                                                    
+                </building>
+                                                
+                <sessionCode>20249</sessionCode>
+                                                
+                <repetition>WEEKLY</repetition>
+                                                
+                <repetitionTime>ONCE_A_WEEK</repetitionTime>
+                                            
+            </meetingTimes>
+                                    
+        </meetingTimes>
+                                
+        <firstMeeting/>
+                                
+        <instructors/>
+                                
+        <currentEnrolment>29</currentEnrolment>
+                                
+        <maxEnrolment>32</maxEnrolment>
+                                
+        <subTitle/>
+                                
+        <cancelInd>N</cancelInd>
+                                
+        <waitlistInd>N</waitlistInd>
+                                
+        <deliveryModes>
+                                        
+            <deliveryModes>
+                                                
+                <session>20249</session>
+                                                
+                <mode>INPER</mode>
+                                            
+            </deliveryModes>
+                                    
+        </deliveryModes>
+                                
+        <currentWaitlist>0</currentWaitlist>
+                                
+        <enrolmentInd/>
+                                
+        <tbaInd>N</tbaInd>
+                                
+        <openLimitInd>N</openLimitInd>
+                                
+        <notes>
+                                        
+            <notes>
+                                                
+                <name>Section Note</name>
+                                                
+                <type>SECTION</type>
+                                                
+                <content/>
+                                            
+            </notes>
+                                    
+        </notes>
+                                
+        <enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>32</quantity>
+                                                
+                <sequence>1</sequence>
+                                            
+            </enrolmentControls>
+                                    
+        </enrolmentControls>
+                            
+    </sections>
+                        
+    <sections>
+                                
+        <name>LEC0101</name>
+                                
+        <type>Lecture</type>
+                                
+        <teachMethod>LEC</teachMethod>
+                                
+        <sectionNumber>0101</sectionNumber>
+                                
+        <meetingTimes>
+                                        
+            <meetingTimes>
+                                                
+                <start>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>46800000</millisofday>
+                                                    
+                </start>
+                                                
+                <end>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>54000000</millisofday>
+                                                    
+                </end>
+                                                
+                <building>
+                                                        
+                    <buildingCode>SS</buildingCode>
+                                                        
+                    <buildingRoomNumber/>
+                                                        
+                    <buildingRoomSuffix/>
+                                                        
+                    <buildingUrl>https://map.utoronto.ca/?id=1809#!m/494510</buildingUrl>
+                                                        
+                    <buildingName/>
+                                                    
+                </building>
+                                                
+                <sessionCode>20249</sessionCode>
+                                                
+                <repetition>WEEKLY</repetition>
+                                                
+                <repetitionTime>ONCE_A_WEEK</repetitionTime>
+                                            
+            </meetingTimes>
+                                    
+        </meetingTimes>
+                                
+        <firstMeeting/>
+                                
+        <instructors>
+                                        
+            <instructors>
+                                                
+                <firstName>Alexandra</firstName>
+                                                
+                <lastName>Malinowski</lastName>
+                                            
+            </instructors>
+                                    
+        </instructors>
+                                
+        <currentEnrolment>89</currentEnrolment>
+                                
+        <maxEnrolment>95</maxEnrolment>
+                                
+        <subTitle/>
+                                
+        <cancelInd>N</cancelInd>
+                                
+        <waitlistInd>Y</waitlistInd>
+                                
+        <deliveryModes>
+                                        
+            <deliveryModes>
+                                                
+                <session>20249</session>
+                                                
+                <mode>INPER</mode>
+                                            
+            </deliveryModes>
+                                    
+        </deliveryModes>
+                                
+        <currentWaitlist>0</currentWaitlist>
+                                
+        <enrolmentInd>P*</enrolmentInd>
+                                
+        <tbaInd>N</tbaInd>
+                                
+        <openLimitInd>N</openLimitInd>
+                                
+        <notes>
+                                        
+            <notes>
+                                                
+                <name>Section Note</name>
+                                                
+                <type>SECTION</type>
+                                                
+                <content/>
+                                            
+            </notes>
+                                    
+        </notes>
+                                
+        <enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASFOC1540D</code>
+                                                        
+                    <name>Focus In Genes, Genetics And Biotechnology</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>1</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASFOC1540E</code>
+                                                        
+                    <name>Focus In Neuroscience</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>2</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASFOC2270D</code>
+                                                        
+                    <name>Focus In Genes, Genetics And Biotechnology</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>3</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASFOC2270E</code>
+                                                        
+                    <name>Focus In Neuroscience</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>4</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASMAJ1050</code>
+                                                        
+                    <name>Fundamental Genetics and Its Applications Major</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>5</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASMAJ1472</code>
+                                                        
+                    <name>Neuroscience Major</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>6</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASSPE1050</code>
+                                                        
+                    <name>Fundamental Genetics and Its Applications Specialist</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>7</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>ASSPE1472</code>
+                                                        
+                    <name>Neuroscience Specialist</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>8</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>ARTSC</code>
+                                                        
+                    <name>Faculty of Arts and Science</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>9</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code/>
+                                                        
+                    <name/>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>ARCLA</code>
+                                                        
+                    <name>John H. Daniels Faculty of Architecture, Landscape, &amp; Design</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>10</sequence>
+                                            
+            </enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>95</quantity>
+                                                
+                <sequence>13</sequence>
+                                            
+            </enrolmentControls>
+                                    
+        </enrolmentControls>
+                            
+    </sections>
+                        
+    <sections>
+                                
+        <name>TUT0102</name>
+                                
+        <type>Tutorial</type>
+                                
+        <teachMethod>TUT</teachMethod>
+                                
+        <sectionNumber>0102</sectionNumber>
+                                
+        <meetingTimes>
+                                        
+            <meetingTimes>
+                                                
+                <start>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>54000000</millisofday>
+                                                    
+                </start>
+                                                
+                <end>
+                                                        
+                    <day>1</day>
+                                                        
+                    <millisofday>57600000</millisofday>
+                                                    
+                </end>
+                                                
+                <building>
+                                                        
+                    <buildingCode>SS</buildingCode>
+                                                        
+                    <buildingRoomNumber/>
+                                                        
+                    <buildingRoomSuffix/>
+                                                        
+                    <buildingUrl>https://map.utoronto.ca/?id=1809#!m/494510</buildingUrl>
+                                                        
+                    <buildingName/>
+                                                    
+                </building>
+                                                
+                <sessionCode>20249</sessionCode>
+                                                
+                <repetition>WEEKLY</repetition>
+                                                
+                <repetitionTime>ONCE_A_WEEK</repetitionTime>
+                                            
+            </meetingTimes>
+                                    
+        </meetingTimes>
+                                
+        <firstMeeting/>
+                                
+        <instructors/>
+                                
+        <currentEnrolment>30</currentEnrolment>
+                                
+        <maxEnrolment>32</maxEnrolment>
+                                
+        <subTitle/>
+                                
+        <cancelInd>N</cancelInd>
+                                
+        <waitlistInd>N</waitlistInd>
+                                
+        <deliveryModes>
+                                        
+            <deliveryModes>
+                                                
+                <session>20249</session>
+                                                
+                <mode>INPER</mode>
+                                            
+            </deliveryModes>
+                                    
+        </deliveryModes>
+                                
+        <currentWaitlist>0</currentWaitlist>
+                                
+        <enrolmentInd/>
+                                
+        <tbaInd>N</tbaInd>
+                                
+        <openLimitInd>N</openLimitInd>
+                                
+        <notes>
+                                        
+            <notes>
+                                                
+                <name>Section Note</name>
+                                                
+                <type>SECTION</type>
+                                                
+                <content/>
+                                            
+            </notes>
+                                    
+        </notes>
+                                
+        <enrolmentControls>
+                                        
+            <enrolmentControls>
+                                                
+                <yearOfStudy>*</yearOfStudy>
+                                                
+                <post>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </post>
+                                                
+                <subject>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subject>
+                                                
+                <subjectPost>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </subjectPost>
+                                                
+                <typeOfProgram>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </typeOfProgram>
+                                                
+                <designation>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </designation>
+                                                
+                <primaryOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </primaryOrg>
+                                                
+                <associatedOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </associatedOrg>
+                                                
+                <secondOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </secondOrg>
+                                                
+                <adminOrg>
+                                                        
+                    <code>*</code>
+                                                        
+                    <name>All</name>
+                                                    
+                </adminOrg>
+                                                
+                <collaborativeOrgGroupCode>*</collaborativeOrgGroupCode>
+                                                
+                <quantity>32</quantity>
+                                                
+                <sequence>1</sequence>
+                                            
+            </enrolmentControls>
+                                    
+        </enrolmentControls>
+                            
+    </sections>
+                    
+</sections>
